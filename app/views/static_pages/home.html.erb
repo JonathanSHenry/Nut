@@ -1,0 +1,26 @@
+<% provide(:title, "Home") %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= yield(:title) %> | Nut. </title>
+  </head>
+  <div class="center jumbotron">
+  <h1>Welcome to Nut!</h1>
+
+  <h2>
+    This is the home page for the best allergy-friendly restaurant finder on the web!
+  </h2>
+
+  <%= link_to "Sign up now!", '/users/new', class: "btn btn-lg btn-primary" %>
+</div>
+<div align="center">
+<img src="https://media.giphy.com/media/3o7TKBkyx27bWph7IQ/giphy.gif" alt="Dabbing Peanut" width="500" height="333">
+
+  <body>
+    <h1>Nut.</h1>
+    <p>
+      This is the home page for the Nut application.
+    </p>
+  </body>
+</div>
+</html>
