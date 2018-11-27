@@ -22,7 +22,7 @@ end
     @user = User.new(user_params)
     if @user.save
       log_in @user
-      flash[:success] = "Welcome to the Allergyeet!"
+      flash[:success] = "Welcome to Nut! Let's find you a restaurant!"
       redirect_to @user
       # Handle a successful save.
     else
