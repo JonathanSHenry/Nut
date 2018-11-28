@@ -58,4 +58,12 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user.authenticated?('')
   end
 
+  test "associated restaurants should be destroyed" do
+    @user.save
+    @user.restaurants.create!(name: "Lorem ipsum")
+    assert_difference 'Restaurant.count', -1 do
+      @user.destroy
+    end
+  end
+
 end

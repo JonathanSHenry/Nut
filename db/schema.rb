@@ -10,17 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_28_031032) do
+ActiveRecord::Schema.define(version: 2018_11_28_221318) do
 
   create_table "restaurants", force: :cascade do |t|
     t.string "name"
-    t.string "user"
     t.string "description"
-    t.string "menu"
+    t.text "menu"
     t.string "allergies_accommodated"
     t.float "rating"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id", "created_at"], name: "index_restaurants_on_user_id_and_created_at"
+    t.index ["user_id"], name: "index_restaurants_on_user_id"
   end
 
   create_table "reviews", force: :cascade do |t|

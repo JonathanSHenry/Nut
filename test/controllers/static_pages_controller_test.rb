@@ -19,7 +19,7 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
 
   test "should get search" do
     get search_path
-    assert_response :success
+    assert_response :found
   end
 
   test "should get login" do
