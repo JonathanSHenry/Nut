@@ -17,6 +17,40 @@
 
       <%= f.label :password_confirmation, "Confirmation" %>
       <%= f.password_field :password_confirmation, class: 'form-control' %>
+     
+     
+     <b>Please select your allergies:</b>
+     <br><br>
+    
+      <%= f.label :peanut, class: "checkbox inline" do %>
+        <%= f.check_box :peanut %>
+        <span>Peanut</span>
+      <% end %>
+
+      <%= f.label :gluten, class: "checkbox inline" do %>
+        <%= f.check_box :gluten %>
+        <span>Gluten</span>
+      <% end %>
+
+      <%= f.label :dairy, class: "checkbox inline" do %>
+        <%= f.check_box :dairy %>
+        <span>Dairy</span>
+      <% end %>
+
+      <%= f.label :egg, class: "checkbox inline" do %>
+        <%= f.check_box :egg %>
+        <span>Egg</span>
+      <% end %>
+
+      <%= f.label :soy, class: "checkbox inline" do %>
+        <%= f.check_box :soy %>
+        <span>Soy</span>
+      <% end %>
+
+      <%= f.label :shellfish, class: "checkbox inline" do %>
+        <%= f.check_box :shellfish %>
+        <span>Shellfish</span>
+      <% end %>
 
       <%= f.submit "Create my account", class: "btn btn-primary" %>
     <% end %>

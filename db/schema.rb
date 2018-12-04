@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_03_212739) do
+ActiveRecord::Schema.define(version: 2018_12_04_223814) do
 
   create_table "restaurants", force: :cascade do |t|
     t.string "name"
@@ -41,6 +41,12 @@ ActiveRecord::Schema.define(version: 2018_12_03_212739) do
     t.string "password_digest"
     t.string "remember_digest"
     t.boolean "admin", default: false
+    t.boolean "peanut", default: false
+    t.boolean "gluten", default: false
+    t.boolean "dairy", default: false
+    t.boolean "egg", default: false
+    t.boolean "soy", default: false
+    t.boolean "shellfish", default: false
   end
 
 end
