@@ -1,0 +1,5 @@
+<% provide(:title, "Search") %>
+<h3>Search Result</h3>  
+    <% @results.each do |result| %>  
+        <%= result.restaurant.name %> <%= result.name %><br>  
+    <% end %>
