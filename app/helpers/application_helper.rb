@@ -45,6 +45,7 @@ module ApplicationHelper
             else          
                 allergy_string += ""
             end
+            allergy_string.chomp(", ")
         end
     end
 end

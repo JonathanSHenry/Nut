@@ -17,8 +17,14 @@ User.create!(name:  "Admin",
   name  = Faker::Name.name
   email = "example-#{n+1}@railstutorial.org"
   password = "password"
+  peanut = true
+  dairy = true
+  soy = true
   User.create!(name:  name,
                email: email,
                password:              password,
-               password_confirmation: password)
+               password_confirmation: password,
+               peanut: peanut,
+               dairy: dairy,
+               soy: soy)
 end
