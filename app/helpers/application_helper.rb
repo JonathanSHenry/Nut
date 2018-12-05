@@ -41,7 +41,7 @@ module ApplicationHelper
                 allergy_string += ""
             end                        
             if user.shellfish
-                allergy_string += "Shellfish, "
+                allergy_string += "Shellfish "
             else          
                 allergy_string += ""
             end
