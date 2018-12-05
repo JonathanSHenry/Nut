@@ -41,12 +41,12 @@ ActiveRecord::Schema.define(version: 2018_12_04_223814) do
     t.string "password_digest"
     t.string "remember_digest"
     t.boolean "admin", default: false
-    t.boolean "peanut", default: false
-    t.boolean "gluten", default: false
-    t.boolean "dairy", default: false
-    t.boolean "egg", default: false
-    t.boolean "soy", default: false
-    t.boolean "shellfish", default: false
+    t.boolean "peanut"
+    t.boolean "gluten"
+    t.boolean "dairy"
+    t.boolean "egg"
+    t.boolean "soy"
+    t.boolean "shellfish"
   end
 
 end

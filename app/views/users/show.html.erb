@@ -9,12 +9,7 @@
     </section>
     <body>
       <b>Known Allergies:</b><br>
-      <%= @user.peanut %><br>
-      <%= @user.gluten %><br>
-      <%= @user.dairy %><br>
-      <%= @user.egg %><br>
-      <%= @user.soy %><br>
-      <%= @user.shellfish %><br>
+      <%= known_allergies_helper(@user) %>
     </body>
   </aside>
 </div>
