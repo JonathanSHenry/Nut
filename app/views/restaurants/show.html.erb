@@ -8,7 +8,7 @@
     </section>
     <body>
       <%= @restaurant.description %><br>
-      <%= link_to @restaurant.menu, "http://#{@restaurant.menu}" %></span>
+      <%= link_to "Menu", "http://#{@restaurant.menu}" %></span>
       <br><br>
       <b>Accomodated Allergies:</b><br>
       <%= known_allergies_helper(@restaurant) %>
