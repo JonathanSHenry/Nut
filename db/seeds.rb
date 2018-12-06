@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 #seeds database with sample users
-User.create!(name:  "Admin",
+User.create!(name:  "Example User",
              email: "example@railstutorial.org",
              password:              "foobar",
              password_confirmation: "foobar",
@@ -27,4 +27,10 @@ User.create!(name:  "Admin",
                peanut: peanut,
                dairy: dairy,
                soy: soy)
+               
+  users = User.order(:created_at).take(6)
+  50.times do
+    description = Faker::Lorem.sentence(5)
+    users.each { |user| user.restaurants.create!(description: description) }
+  end
 end

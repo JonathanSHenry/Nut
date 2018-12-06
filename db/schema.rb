@@ -10,17 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_04_223814) do
+ActiveRecord::Schema.define(version: 2018_12_06_001840) do
 
   create_table "restaurants", force: :cascade do |t|
     t.string "name"
-    t.string "user"
-    t.string "description"
     t.string "menu"
-    t.string "allergies_accommodated"
-    t.float "rating"
+    t.text "description"
+    t.boolean "peanut"
+    t.boolean "gluten"
+    t.boolean "dairy"
+    t.boolean "egg"
+    t.boolean "soy"
+    t.boolean "shellfish"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id", "created_at"], name: "index_restaurants_on_user_id_and_created_at"
+    t.index ["user_id"], name: "index_restaurants_on_user_id"
   end
 
   create_table "reviews", force: :cascade do |t|

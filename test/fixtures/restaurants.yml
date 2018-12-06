@@ -1,17 +1,41 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
+
+orange:
+  description: "I just ate an orange!"
+  created_at: <%= 10.minutes.ago %>
+  user
+
+tau_manifesto:
+  description: "Check out the @tauday site by @mhartl: http://tauday.com"
+  created_at: <%= 3.years.ago %>
+
+cat_video:
+  description: "Sad cats are sad: https://www.youtube.com/watch?v=RaCodgL9cvk"
+  created_at: <%= 2.hours.ago %>
+
+most_recent:
+  description: "Writing a short test"
+  created_at: <%= Time.zone.now %>
+  
 one:
   name: MyString
-  user: MyString
   description: MyString
   menu: MyString
-  allergies_accommodated: MyString
-  rating: 1.5
+  peanut: false
+  gluten: false
+  dairy: false
+  egg: false
+  soy: false
+  shellfish: false
 
 two:
   name: MyString
-  user: MyString
   description: MyString
   menu: MyString
-  allergies_accommodated: MyString
-  rating: 1.5
+  peanut: false
+  gluten: false
+  dairy: false
+  egg: false
+  soy: false
+  shellfish: false

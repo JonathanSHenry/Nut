@@ -1,0 +1,53 @@
+<% provide(:title, 'Create restaurant') %>
+<h1>Create Restaurant</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@restaurant) do |f| %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
+
+      <%= f.label :description %>
+      <%= f.text_field :description, class: 'form-control' %>
+
+      <%= f.label :menu %>
+      <%= f.text_field :menu, class: 'form-control' %> 
+      
+      <b>Please select the allergies this restaurant accomodates:</b>
+      <br><br>
+    
+      <%= f.label :peanut, class: "checkbox inline" do %>
+        <%= f.check_box :peanut %>
+        <span>Peanut</span>
+      <% end %>
+
+      <%= f.label :gluten, class: "checkbox inline" do %>
+        <%= f.check_box :gluten %>
+        <span>Gluten</span>
+      <% end %>
+
+      <%= f.label :dairy, class: "checkbox inline" do %>
+        <%= f.check_box :dairy %>
+        <span>Dairy</span>
+      <% end %>
+
+      <%= f.label :egg, class: "checkbox inline" do %>
+        <%= f.check_box :egg %>
+        <span>Egg</span>
+      <% end %>
+
+      <%= f.label :soy, class: "checkbox inline" do %>
+        <%= f.check_box :soy %>
+        <span>Soy</span>
+      <% end %>
+
+      <%= f.label :shellfish, class: "checkbox inline" do %>
+        <%= f.check_box :shellfish %>
+        <span>Shellfish</span>
+      <% end %>
+
+      <%= f.submit "Create restaurant", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
