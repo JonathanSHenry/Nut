@@ -5,7 +5,7 @@ class RestaurantsController < ApplicationController
         @restaurant = current_user.restaurants.build(restaurant_params)
         if @restaurant.save
             flash[:success] = "Restaurant created"
-            redirect_to root_url
+            redirect_to all_restaurants_url
         # Handle a successful save.
         else
             render 'static_pages/home'

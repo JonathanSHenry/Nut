@@ -1,12 +1,15 @@
 <% provide(:title, @restaurant.name) %>
 <div class="row">
   <aside class="col-md-4">
-    <section class="user_info">
+    <section class="restaurant_info">
       <h1>
         <%= @restaurant.name %>
       </h1>
     </section>
     <body>
+      <%= @restaurant.description %><br>
+      <%= link_to @restaurant.menu, "http://#{@restaurant.menu}" %></span>
+      <br><br>
       <b>Accomodated Allergies:</b><br>
       <%= known_allergies_helper(@restaurant) %>
     </body> 
