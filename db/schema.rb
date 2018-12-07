@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2018_12_06_001840) do
     t.index ["user_id"], name: "index_restaurants_on_user_id"
   end
 
-  create_table "reviews", force: :cascade do |t|
+  create_table "reviews", force: :cascade do |t| 
     t.string "review_body"
     t.integer "rating"
     t.integer "restaurant_id"

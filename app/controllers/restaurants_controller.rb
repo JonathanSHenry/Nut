@@ -20,17 +20,15 @@ class RestaurantsController < ApplicationController
         @restaurant = Restaurant.find(params[:id])
     end
 
-    
-    def search  
-        if params[:search].blank?  
-            redirect_to(root_path, alert: "Empty field!") and return  
-        else  
-            @parameter = restaurant_params[:search].downcase  
-            @results = Restaurant.all.where("lower(name) LIKE :search", search: @parameter) # change to match restaurants micropost database setup, possibly tag items
-        end  
+    before_action :set_search
+
+    def set_search
+        @search=Restaurant.search(params[:q])
     end
 
     def index
+        @q = Restaurant.ransack(params[:q])
+        @restaurants = @q.result(distinct: true)
         @restaurants = Restaurant.paginate(page: params[:page])
     end
 

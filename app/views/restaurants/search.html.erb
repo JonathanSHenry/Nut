@@ -1,5 +1,27 @@
 <% provide(:title, "Search") %>
 <h3>Search Results</h3>  
-    <% @results.each do |result| %>  
-        <%= result.restaurant.name %> <%= result.name %><br>  
-    <% end %>
+
+<%= search_form_for @q do |f| %>
+
+  <%# Attributes may be chained. Search multiple attributes for one value...%>
+  <%= f.label :name_or_description_or_menu_or_peanut_gluten_dairy_egg_soy_shellfish %>
+  <%= f.search_field :name_or_description_or_menu_or_peanut_or_gluten_or_dairy_or_egg_or_soy_or_shellfish %>
+
+    <%# Search if the name field contains...%>
+  <%#= f.label :name_cont %>
+  <%#= f.search_field :name_cont %>
+
+  <%= f.submit %>
+<% end %>
+
+<%= content_tag :table do %>
+  <%= content_tag :th, sort_link(@q, :name) %>
+  <%= content_tag :th, sort_link(@q, :description) %>
+  <%= content_tag :th, sort_link(@q, :menu) %>
+  <%= content_tag :th, sort_link(@q, :peanut) %>
+  <%= content_tag :th, sort_link(@q, :gluten) %>
+  <%= content_tag :th, sort_link(@q, :dairy) %>
+  <%= content_tag :th, sort_link(@q, :egg) %>
+  <%= content_tag :th, sort_link(@q, :soy) %>
+  <%= content_tag :th, sort_link(@q, :shellfish) %>
+<% end %>
