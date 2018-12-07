@@ -25,6 +25,23 @@ textarea {
   margin-bottom: 10px;
 }
 
+.my-container {
+    position: relative;
+    overflow: hidden;
+}
+.my-container h1 {
+    padding: 200px;
+    position: relative;
+    z-index: 2;
+} 
+.my-container img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    opacity: 0.6;
+}
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
@@ -83,7 +100,9 @@ footer {
   color: #777;
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
   font-size: 1.1em;
+  background-color: rgb(106, 106, 106);
 }
+
 
 footer a {
   color: #555;
