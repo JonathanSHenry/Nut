@@ -20,16 +20,29 @@ class RestaurantsController < ApplicationController
         @restaurant = Restaurant.find(params[:id])
     end
 
-    before_action :set_search
-
-    def set_search
-        @search=Restaurant.search(params[:q])
-    end
-
     def index
-        @q = Restaurant.ransack(params[:q])
-        @restaurants = @q.result(distinct: true)
         @restaurants = Restaurant.paginate(page: params[:page])
+        if params[:restaurant]
+            @restaurant = Restaurant.where('restaurant LIKE ?', "%#{params[:restaurant]}%")
+        else
+            @restaurant = Restaurant.all
+        end
+    end
+    # def index
+    #     @restaurants = Restaurant.search(params[:term])
+    #     @restaurants = Restaurant.paginate(page: params[:page])
+    # end
+    def self.search(search)
+        if search
+            name = Restaurant.find_by(name: search)
+            if name
+                self.where(restaurant_name: name)
+            else
+                Restaurant.all
+            end
+        else
+            Restaurant.all
+        end
     end
 
     def destroy
@@ -41,7 +54,7 @@ class RestaurantsController < ApplicationController
     private
 
     def restaurant_params
-      params.require(:restaurant).permit(:description, :menu, :name, :peanut, :gluten, :dairy, :egg, :soy, :shellfish)
+      params.require(:restaurant).permit(:description, :menu, :name, :peanut, :gluten, :dairy, :egg, :soy, :shellfish, :search)
     end
     
 end

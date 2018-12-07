@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   delete '/logout',  to: 'sessions#destroy'
   get '/restaurants', to: 'restaurants#new'
   get '/all_restaurants', to: 'restaurants#index'
+
   resources :users
   resources :restaurants
 end

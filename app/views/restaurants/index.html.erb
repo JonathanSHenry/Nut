@@ -3,6 +3,11 @@
 
 <%= will_paginate %>
 
+<%= form_tag(restaurants_path method: :get) do %>
+  Restaurant <%= text_field_tag :restaurant, params[:restaurant] %> 
+  <%= submit_tag 'Search', name: nil %>
+<% end %>
+
 <ul class="restaurants">
   <%= render @restaurants %>
 </ul>
