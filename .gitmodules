@@ -1,0 +1,2 @@
+[submodule "gmaps"]
+	url = https://raw.githubusercontent.com/HPNeo/gmaps/master/gmaps.js
