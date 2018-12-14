@@ -1,3 +1,5 @@
+# Added to and modified attributes for the restaurant database.
+
 class CreateRestaurants < ActiveRecord::Migration[5.2]
   def change
     create_table :restaurants do |t|
