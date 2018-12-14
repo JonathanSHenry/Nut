@@ -1,5 +1,38 @@
 <% provide(:title, "Search") %>
-<h3>Search Results</h3>  
-    <% @results.each do |result| %>  
-        <%= result.restaurant.name %> <%= result.name %><br>  
-    <% end %>
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDy4qFxWjsqdAUssdl0c7eBtwUtKBDW7L4&libraries=places&callback=initMap"></script>
+  <script src="gmaps.js"></script>
+  <style type="text/css">
+    #map {
+      width: 400px;
+      height: 400px;
+    }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  <script>
+    var map = new GMaps({
+      el: '#map',
+      lat: 40.5975, //40.597727 -75.509695 are Muhlenberg's coordinates
+      lng: -75.509695
+    });
+  </script>
+  <script>
+  (function() {
+    var cx = '016819074554544631328:mwodcsnawpa';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:search></gcse:search>
+</body>
+</html>
+
